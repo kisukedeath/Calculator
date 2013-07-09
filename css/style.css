@@ -402,7 +402,7 @@ span.show-tooltip-text {
 	border: 0;
 	color: #f6931f;
 	font-weight: bold;
-	width: 110px;
+	width: 160px;
 	background: transparent;
 	text-align: justify;
 }
@@ -450,4 +450,8 @@ span.show-tooltip-text {
 .roi {
 	width: 350px;
 	height: 48px;
+}
+
+.sidebar > h1 {
+	font-family: 'Helvetica, sans-serif';
 }
