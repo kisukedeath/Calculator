@@ -24,7 +24,7 @@ h1 {
 	color: #fff;
 	text-shadow:1px 1px 0px #1d1919;
 	font-weight:400;
-	margin-bottom: 60px;
+	margin-bottom: 40px;
 	text-align:center;
 	line-height: 1.4em;
 }
@@ -264,28 +264,28 @@ p {
 	position: absolute;
 	width: 80px;
 	margin-left: -405px;
-	margin-top: -420px;
+	margin-top: -445px;
 }
 .container .content .bottle_box .bottle_counter.bottle_h {
 	background-position: -130px 0px;
 	position: absolute;
 	width: 80px;
 	margin-left: -445px;
-	margin-top: -420px;
+	margin-top: -445px;
 }
 .container .content .bottle_box .bottle_counter.bottle_m {
 	background-position: -260px 0px;
 	position: absolute;
 	width: 80px;
 	margin-left: -485px;
-	margin-top: -420px;
+	margin-top: -445px;
 }
 .container .content .bottle_box .bottle_counter.bottle_s {
 	background-position: -390px 0px;
 	position: absolute;
 	width: 80px;
 	margin-left: -525px;
-	margin-top: -420px;
+	margin-top: -445px;
 }
 .container .content .bottle_box .bottle_section .bottle_bg {
 	position:absolute;
@@ -368,7 +368,7 @@ span.show-tooltip-text {
 
 .total {
 	width: 168px;
-	margin: 30px 0px 30px 40px;
+	margin: 30px 0px 20px 40px;
 	color: #fff;
 	font-size: 70px;
 	text-align: center;
@@ -389,6 +389,15 @@ span.show-tooltip-text {
 	padding-right: 12px;
 }
 
+.titleroi {
+	color: #fff;
+	font-size: 15px;
+	text-align: center;
+	padding-right: 12px;
+	display: block;
+	padding-bottom: 8px;
+}
+
 .amount{
 	border: 0;
 	color: #f6931f;
@@ -401,4 +410,44 @@ span.show-tooltip-text {
 .bottle_section {
 	position: relative;
 	top: -40px;
+}
+
+.howto {
+	display: block;
+	text-align: center;
+	width: 300px;
+	margin-top: 10px;
+}
+
+.howto h1 {
+	margin-bottom: 0px;
+	margin-top: 10px;
+	text-align: center;
+}
+
+.howto p {
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+.amount-p {
+	padding-left: 3px;
+	border-radius: 3px;
+	height: 20px;
+	width: 95px;
+}
+
+.c-left{
+	float: left;
+	margin-right: 50px;
+	margin-left: 30px;
+}
+
+.c-right{
+	float: left;
+}
+
+.roi {
+	width: 350px;
+	height: 48px;
 }

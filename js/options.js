@@ -5,6 +5,8 @@ $(document).ready(function(){
     fb = $('#fb');
     links = $('#links');
     media = $('#media');
+    campaign = $('#campaign');
+    roi = $('#roi');
 
     //results
     sliderval = 0;
@@ -12,7 +14,21 @@ $(document).ready(function(){
     fbresult = 0;
     linksresult = 0;
     mediaresult = 0;
+    roiresult = 0;
     total = 10;
+
+    campaign.keyup(function(){
+        if(campaign.val() == ''|| campaign.val() == null ){
+            roi.val('0%');
+            campaign.val() = 0;
+        }
+      
+        r = total - campaign.val();
+        r2 = r / campaign.val();;
+        roiresult = tointdecimal(r2 * 100);
+        roi.val(roiresult + "%" );
+    });
+
 
     //each slider
     $( "#slider0" ).slider({
@@ -26,9 +42,11 @@ $(document).ready(function(){
         change: function( event, ui){
             sliderval = $( "#slider0" ).slider( "value" );
             trafficresult = toint(traffic.val() * sliderval);
-            $('#trafficresult').val( "$" + trafficresult);
+            trafficresultc = numberWithCommas(toint(traffic.val() * sliderval));
+            $('#trafficresult').val( "$" + trafficresultc);
             total = toint(fbresult + trafficresult + linksresult + mediaresult);
-            $('.total').html(total);
+            totalc = numberWithCommas(toint(fbresult + trafficresult + linksresult + mediaresult));
+            $('.total').html("$" + totalc);
             $( "#amount0" ).val( "$" + $( "#slider0" ).slider( "value" ) + " per visitor");
         }
     });
@@ -37,9 +55,11 @@ $(document).ready(function(){
     traffic.keyup(function(){
         sliderval = $( "#slider0" ).slider( "value" );
         trafficresult = toint(traffic.val() * sliderval);
-        $('#trafficresult').val( "$" + trafficresult);
-            total = toint(fbresult + trafficresult + linksresult + mediaresult);
-            $('.total').html(total);
+        trafficresultc = numberWithCommas(toint(traffic.val() * sliderval));
+        $('#trafficresult').val( "$" + trafficresultc);
+        total = toint(fbresult + trafficresult + linksresult + mediaresult);
+        totalc = numberWithCommas(toint(fbresult + trafficresult + linksresult + mediaresult));
+        $('.total').html("$" + totalc);
     });
 
     $( "#slider1" ).slider({
@@ -53,9 +73,11 @@ $(document).ready(function(){
         change: function( event, ui){
             sliderval = $( "#slider1" ).slider( "value" );
             fbresult = toint(fb.val() * sliderval);
-            $('#fbresult').val( "$" + fbresult);
+            fbresultc = numberWithCommas(toint(fb.val() * sliderval));
+            $('#fbresult').val( "$" + fbresultc);
             total = toint(fbresult + trafficresult + linksresult + mediaresult);
-            $('.total').html(total);
+            totalc = numberWithCommas(toint(fbresult + trafficresult + linksresult + mediaresult));
+            $('.total').html("$" + totalc);
             $( "#amount1" ).val( "$" + $( "#slider1" ).slider( "value" ) + " per share");
         }
     });
@@ -64,9 +86,11 @@ $(document).ready(function(){
     fb.keyup(function(){
         sliderval = $( "#slider1" ).slider( "value" );
         fbresult = toint(fb.val() * sliderval);
-        $('#fbresult').val( "$" + fbresult);
-            total = toint(fbresult + trafficresult + linksresult + mediaresult);
-            $('.total').html(total);
+        fbresultc = numberWithCommas(toint(fb.val() * sliderval));
+        $('#fbresult').val( "$" + fbresultc);
+        total = toint(fbresult + trafficresult + linksresult + mediaresult);
+        totalc = numberWithCommas(toint(fbresult + trafficresult + linksresult + mediaresult));
+        $('.total').html("$" + totalc);
     }); 
 
     $( "#slider2" ).slider({
@@ -80,9 +104,11 @@ $(document).ready(function(){
         change: function( event, ui){
             sliderval = $( "#slider2" ).slider( "value" );
             linksresult = toint(links.val() * sliderval);
-            $('#linksresult').val( "$" + linksresult);
+            linksresultc = numberWithCommas(toint(links.val() * sliderval));
+            $('#linksresult').val( "$" + linksresultc);
             total = toint(fbresult + trafficresult + linksresult + mediaresult);
-            $('.total').html(total);
+            totalc = numberWithCommas(toint(fbresult + trafficresult + linksresult + mediaresult));
+            $('.total').html("$" + totalc);
             $( "#amount2" ).val( "$" + $( "#slider2" ).slider( "value" ) + " per link");
         }
     });
@@ -91,9 +117,11 @@ $(document).ready(function(){
     links.keyup(function(){
         sliderval = $( "#slider2" ).slider( "value" );
         linksresult = toint(links.val() * sliderval);
-        $('#linksresult').val( "$" + linksresult);
-            total = toint(fbresult + trafficresult + linksresult + mediaresult);
-            $('.total').html(total);
+        linksresultc = numberWithCommas(toint(links.val() * sliderval));
+        $('#linksresult').val( "$" + linksresultc);
+        total = toint(fbresult + trafficresult + linksresult + mediaresult);
+        totalc = numberWithCommas(toint(fbresult + trafficresult + linksresult + mediaresult));
+        $('.total').html("$" + totalc);
     });
 
     $( "#slider3" ).slider({
@@ -107,9 +135,11 @@ $(document).ready(function(){
         change: function( event, ui){
             sliderval = $( "#slider3" ).slider( "value" );
             mediaresult = toint(media.val() * sliderval);
-            $('#mediaresult').val( "$" + mediaresult);
+            mediaresultc = numberWithCommas(toint(media.val() * sliderval));
+            $('#mediaresult').val( "$" + mediaresultc);
             total = toint(fbresult + trafficresult + linksresult + mediaresult);
-            $('.total').html(total);
+            totalc = numberWithCommas(toint(fbresult + trafficresult + linksresult + mediaresult));
+            $('.total').html("$" + totalc);
             $( "#amount3" ).val( "$" + $( "#slider3" ).slider( "value" ) + " per placement");
         }
     });
@@ -118,9 +148,11 @@ $(document).ready(function(){
     media.keyup(function(){
         sliderval = $( "#slider3" ).slider( "value" );
         mediaresult = toint(media.val() * sliderval);
-        $('#mediaresult').val( "$" + mediaresult);
-            total = toint(fbresult + trafficresult + linksresult + mediaresult);
-            $('.total').html(total);
+        mediaresultc = numberWithCommas(toint(media.val() * sliderval));
+        $('#mediaresult').val( "$" + mediaresultc);
+        total = toint(fbresult + trafficresult + linksresult + mediaresult);
+        totalc = numberWithCommas(toint(fbresult + trafficresult + linksresult + mediaresult));
+        $('.total').html("$" + totalc);
     });
     
 
@@ -136,7 +168,7 @@ $(document).ready(function(){
                 'margin-top' : margin_top_fill + 'px'
             });
         },300);
-        console.log(margin_top_fill);
+
     };
 
     var last_value_iMedia = 0;
@@ -171,29 +203,45 @@ $(document).ready(function(){
                         var last_value = $(Pb).find('.bottle_counter').html();
                         
                         // display current positions and progress
-                        if(aOpts.type == 'iSec'){
+                        if(aOpts.type == 'iMedia'){
+                            if(isNaN(iMedia) == true){
+                                iMedia = 0;    
+                            }
                             $(Pb).find('.bottle_counter').html(iMedia + "%");
-                            if(last_value != last_value_iMedia)
+                            if(last_value != last_value_iMedia){
                                 $(Pb).find('.drop').drop(500 - iMedia * 3.75);
                             last_value_iMedia = last_value;
+                            }
                         }
-                        if(aOpts.type == 'iMin'){
+                        if(aOpts.type == 'iLinks'){
+                            if(isNaN(iLinks) == true){
+                                iLinks = 0;    
+                            }
                             $(Pb).find('.bottle_counter').html(iLinks + "%");
-                            if(last_value != last_value_iLinks)
+                            if(last_value != last_value_iLinks){
                                 $(Pb).find('.drop').drop(500 - iLinks * 3.75);
                             last_value_iLinks = last_value;
+                            }
                         }
-                        if(aOpts.type == 'iHours'){
+                        if(aOpts.type == 'iTwitts'){
+                            if(isNaN(iTwitts) == true){
+                                iTwitts = 0;    
+                            }
                             $(Pb).find('.bottle_counter').html(iTwitts + "%");
-                            if(last_value != last_value_iTwitts)
+                            if(last_value != last_value_iTwitts){
                                 $(Pb).find('.drop').drop(500 - iTwitts * 3.75);
                             last_value_iTwitts = last_value;
+                            }
                         }
-                        if(aOpts.type == 'iDays'){
+                        if(aOpts.type == 'iTraffic'){
+                            if(isNaN(iTraffic) == true){
+                                iTraffic = 0;    
+                            }
                             $(Pb).find('.bottle_counter').html(iTraffic + "%");
-                            if(last_value != last_value_iTraffic)
+                            if(last_value != last_value_iTraffic){
                                 $(Pb).find('.drop').drop(500 - iTraffic * 3.75);
                             last_value_iTraffic = last_value;
+                            }
                         }
 
                     } , aOpts.interval
@@ -203,17 +251,25 @@ $(document).ready(function(){
     };
 
     $('#days').anim_progressbar({
-        type : 'iDays'
+        type : 'iTraffic'
     });
     $('#hours').anim_progressbar({
-        type : 'iHours'
+        type : 'iTwitts'
     });
     $('#minutes').anim_progressbar({
-        type : 'iMin'
+        type : 'iLinks'
     });
     $('#seconds').anim_progressbar({
-        type : 'iSec'
+        type : 'iMedia'
     });
+
+
+    $(".amount-input").keypress(function(evt){
+
+
+    });
+
+
 });
 
 function validate(evt) {
@@ -225,18 +281,19 @@ function validate(evt) {
         theEvent.returnValue = false;
         if(theEvent.preventDefault) theEvent.preventDefault();
     }
+
 }
 
 function toint(numero) {
-var original = parseFloat(numero);
-var result = Math.ceil(original);
-return result;
+    var original = parseFloat(numero);
+    var result = Math.ceil(original);
+    return result;
 }
 
 function tointdecimal(numero) {
-var original = parseFloat(numero);
-var result = Math.round(original * 100) / 100;
-return result;
+    var original = parseFloat(numero);
+    var result = Math.round(original * 100) / 100;
+    return result;
 }
 
 function numberWithCommas(x) {
