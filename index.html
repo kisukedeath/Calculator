@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Calculator</title>
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+<meta name="description" content="Calculator">
+<meta name="keywords" content="themes, css, html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- ===== START CSS ===== -->
+<link href="css/style.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+<!-- ===== END CSS ===== -->
+<!-- ===== START JAVASCRIPT ===== -->
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="js/options.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>  
+<!-- ===== END JAVASCRIPT ===== -->
+</head>
+<body>
+<div class="container">
+  <div class="sidebar">
+    <h1>Calculator</h1>
+    <div class="total">0</div>
+    <div class="arrow"></div>
+    <div class="separate"></div>
+  </div>
+  <div class="content">
+    <div class="top_line"></div>
+    <div class="top_head"></div>
+
+    <div class="bottle_box">
+      <div id="days" class="bottle">
+          <div class="amount-slider">
+            <p><input type="text" class="amount" id="amount0" /></p>
+            <label class="title" for="">Traffic</label>
+            <input id="traffic" class="amount-input" type="text" onkeypress='validate(event)' placeholder='0'></input>
+            <div id="slider0"></div>
+          </div>
+        <div class="bottle_section">
+          <div class="overflow">
+            <div class="fill fill_d"></div>
+            <div class="drop drop_d"></div>
+          </div>
+          <div class="bottle_bg"></div>
+        </div>
+        <div class="bottle_counter bottle_d">0</div>
+        <input id="trafficresult" class="result" type="text" value="$0" readonly></input>
+      </div>
+      <div id="hours" class="bottle">
+        <div class="amount-slider">
+          <p><input type="text" class="amount" id="amount1" /></p>
+          <label class="title" for="">Social Shares</label>
+          <input id="fb" class="amount-input" type="text" onkeypress='validate(event)' placeholder='0'></input>
+          <div id="slider1"></div>
+        </div>
+        <div class="bottle_section">
+          <div class="overflow">
+            <div class="fill fill_h"></div>
+            <div class="drop drop_h"></div>
+          </div>
+          <div class="bottle_bg"></div>
+        </div>
+        <div class="bottle_counter bottle_h">0</div>
+        <input id="fbresult" class="result" type="text" value="$0" readonly></input>
+      </div>
+      <div id="minutes" class="bottle">
+        <div class="amount-slider">
+          <p><input type="text" class="amount" id="amount2" /></p>
+          <label class="title" for="">Links</label>
+          <input id="links" class="amount-input" type="text" onkeypress='validate(event)' placeholder='0'></input>
+          <div id="slider2"></div>
+        </div>
+        <div class="bottle_section">
+          <div class="overflow">
+            <div class="fill fill_m"></div>
+            <div class="drop drop_m"></div>
+          </div>
+          <div class="bottle_bg"></div>
+        </div>
+        <div class="bottle_counter bottle_m">0</div>
+        <input id="linksresult" class="result" type="text" value="$0" readonly></input>
+      </div>
+      <div id="seconds" class="bottle_last">
+        <div class="amount-slider">
+          <p><input type="text" class="amount" id="amount3" /></p>
+          <label class="title" for="">Major Placements</label>
+          <input id="media" class="amount-input" type="text" onkeypress='validate(event)' placeholder='0'></input>
+          <div id="slider3"></div>
+        </div>
+        <div class="bottle_section">
+          <div class="overflow">
+            <div class="fill fill_s"></div>
+            <div class="drop drop_s"></div>
+          </div>
+          <div class="bottle_bg"></div>
+        </div>
+        <div class="bottle_counter bottle_s">0</div>
+        <input id="mediaresult" class="result" type="text" value="$0" readonly></input>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+</body>
+</html>
