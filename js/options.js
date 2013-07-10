@@ -22,19 +22,18 @@ $(document).ready(function(){
             roi.html('0%');
             campaign.val() = 0;
         }
-      
         r = total - campaign.val();
-        r2 = r / campaign.val();;
-        roiresult = tointdecimal(r2 * 100);
+        r2 = r / campaign.val();
+        roiresult = numberWithCommas(tointdecimal(r2 * 100));
         roi.html(roiresult + "%" );
     });
 
-
     //each slider
+    //Traffic
     $( "#slider0" ).slider({
         value: 0.01,
         min: 0.01,
-        max: 0.10,
+        max: 1.0,
         step: 0.01,
         slide: function( event, ui ) {
             $( "#amount0" ).val( "$" + ui.value );
@@ -48,6 +47,14 @@ $(document).ready(function(){
             totalc = numberWithCommas(toint(fbresult + trafficresult + linksresult + mediaresult));
             $('#total').val("$" + totalc);
             $( "#amount0" ).val( "$" + $( "#slider0" ).slider( "value" ) + " per visitor");
+            if(campaign.val() == ''|| campaign.val() == null ){
+            roi.html('0%');
+            campaign.val() = 0;
+            }
+            r = total - campaign.val();
+            r2 = r / campaign.val();
+            roiresult = numberWithCommas(tointdecimal(r2 * 100));
+            roi.html(roiresult + "%" );
         }
     });
     $( "#amount0" ).val( "$" + $( "#slider0" ).slider( "value" ) + " per visitor");
@@ -60,12 +67,21 @@ $(document).ready(function(){
         total = toint(fbresult + trafficresult + linksresult + mediaresult);
         totalc = numberWithCommas(toint(fbresult + trafficresult + linksresult + mediaresult));
         $('#total').val("$" + totalc);$('#total').val("$" + totalc);
+        if(campaign.val() == ''|| campaign.val() == null ){
+            roi.html('0%');
+            campaign.val() = 0;
+        }
+        r = total - campaign.val();
+        r2 = r / campaign.val();
+        roiresult = numberWithCommas(tointdecimal(r2 * 100));
+        roi.html(roiresult + "%" );
     });
 
+    //Share
     $( "#slider1" ).slider({
         value: 1,
         min: 0.5,
-        max: 5,
+        max: 10,
         step: 0.1,
         slide: function( event, ui ) {
             $( "#amount1" ).val( "$" + ui.value );
@@ -79,6 +95,14 @@ $(document).ready(function(){
             totalc = numberWithCommas(toint(fbresult + trafficresult + linksresult + mediaresult));
             $('#total').val("$" + totalc);
             $( "#amount1" ).val( "$" + $( "#slider1" ).slider( "value" ) + " per share");
+            if(campaign.val() == ''|| campaign.val() == null ){
+            roi.html('0%');
+            campaign.val() = 0;
+            }
+            r = total - campaign.val();
+            r2 = r / campaign.val();
+            roiresult = numberWithCommas(tointdecimal(r2 * 100));
+            roi.html(roiresult + "%" );
         }
     });
     $( "#amount1" ).val( "$" + $( "#slider1" ).slider( "value" ) + " per share");
@@ -91,12 +115,21 @@ $(document).ready(function(){
         total = toint(fbresult + trafficresult + linksresult + mediaresult);
         totalc = numberWithCommas(toint(fbresult + trafficresult + linksresult + mediaresult));
         $('#total').val("$" + totalc);
+        if(campaign.val() == ''|| campaign.val() == null ){
+            roi.html('0%');
+            campaign.val() = 0;
+        }
+        r = total - campaign.val();
+        r2 = r / campaign.val();
+        roiresult = numberWithCommas(tointdecimal(r2 * 100));
+        roi.html(roiresult + "%" );
     }); 
 
+    //Links
     $( "#slider2" ).slider({
-        value: 10,
-        min: 10,
-        max: 200,
+        value: 20,
+        min: 20,
+        max: 1000,
         step: 10,
         slide: function( event, ui ) {
             $( "#amount2" ).val( "$" + ui.value );
@@ -110,6 +143,14 @@ $(document).ready(function(){
             totalc = numberWithCommas(toint(fbresult + trafficresult + linksresult + mediaresult));
             $('#total').val("$" + totalc);
             $( "#amount2" ).val( "$" + $( "#slider2" ).slider( "value" ) + " per link");
+            if(campaign.val() == ''|| campaign.val() == null ){
+            roi.html('0%');
+            campaign.val() = 0;
+            }
+            r = total - campaign.val();
+            r2 = r / campaign.val();
+            roiresult = numberWithCommas(tointdecimal(r2 * 100));
+            roi.html(roiresult + "%" );
         }
     });
     $( "#amount2" ).val( "$" + $( "#slider2" ).slider( "value" ) + " per link");
@@ -122,8 +163,17 @@ $(document).ready(function(){
         total = toint(fbresult + trafficresult + linksresult + mediaresult);
         totalc = numberWithCommas(toint(fbresult + trafficresult + linksresult + mediaresult));
         $('#total').val("$" + totalc);
+        if(campaign.val() == ''|| campaign.val() == null ){
+            roi.html('0%');
+            campaign.val() = 0;
+        }
+        r = total - campaign.val();
+        r2 = r / campaign.val();
+        roiresult = numberWithCommas(tointdecimal(r2 * 100));
+        roi.html(roiresult + "%" );
     });
 
+    //Media
     $( "#slider3" ).slider({
         value: 200,
         min: 200,
@@ -141,6 +191,14 @@ $(document).ready(function(){
             totalc = numberWithCommas(toint(fbresult + trafficresult + linksresult + mediaresult));
             $('#total').val("$" + totalc);
             $( "#amount3" ).val( "$" + $( "#slider3" ).slider( "value" ) + " per placement");
+            if(campaign.val() == ''|| campaign.val() == null ){
+            roi.html('0%');
+            campaign.val() = 0;
+            }
+            r = total - campaign.val();
+            r2 = r / campaign.val();
+            roiresult = numberWithCommas(tointdecimal(r2 * 100));
+            roi.html(roiresult + "%" );
         }
     });
     $( "#amount3" ).val( "$" + $( "#slider3" ).slider( "value" ) + " per placement");
@@ -153,6 +211,14 @@ $(document).ready(function(){
         total = toint(fbresult + trafficresult + linksresult + mediaresult);
         totalc = numberWithCommas(toint(fbresult + trafficresult + linksresult + mediaresult));
         $('#total').val("$" + totalc);
+        if(campaign.val() == ''|| campaign.val() == null ){
+            roi.html('0%');
+            campaign.val() = 0;
+        }
+        r = total - campaign.val();
+        r2 = r / campaign.val();
+        roiresult = numberWithCommas(tointdecimal(r2 * 100));
+        roi.html(roiresult + "%" );
     });
     
 
@@ -263,13 +329,6 @@ $(document).ready(function(){
         type : 'iMedia'
     });
 
-
-    $(".amount-input").keypress(function(evt){
-
-
-    });
-
-
 });
 
 function validate(evt) {
@@ -299,3 +358,4 @@ function tointdecimal(numero) {
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
+
